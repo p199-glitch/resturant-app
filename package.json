@@ -1,0 +1,10 @@
+{
+  "name": "pirka-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix pirka-react",
+    "build": "npm run build --prefix pirka-react",
+    "preview": "npm run preview --prefix pirka-react",
+    "install-all": "npm install --prefix pirka-react"
+  }
+}

@@ -1,0 +1,46 @@
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 70vh;
+  align-items: stretch;
+}
+.about-hero-img .img-ph { height: 100%; min-height: 480px; }
+.about-hero-text {
+  padding: 5rem 4rem 5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--bg2);
+}
+.about-intro { font-size: 0.9rem; color: var(--muted); line-height: 1.9; }
+
+.about-story {
+  max-width: 1100px; margin: 0 auto;
+  padding: 6rem 2rem;
+  display: grid; grid-template-columns: 1fr 1.5fr;
+  gap: 5rem; align-items: start;
+}
+.about-story-sticky { position: sticky; top: 100px; }
+.about-story-text p { font-size: 0.95rem; color: var(--muted); line-height: 2; margin-bottom: 1.5rem; }
+.values-heading { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; margin: 2rem 0 1.5rem; color: var(--text); }
+.values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1rem; }
+.value-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+.value-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--text); }
+.value-card p { font-size: 0.78rem; color: var(--muted); line-height: 1.7; }
+
+.chef-section { background: var(--bg2); border-top: 1px solid var(--border); padding: 6rem 2rem; }
+.chef-header { max-width: 1100px; margin: 0 auto 3rem; text-align: center; }
+.chef-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 300px 1fr; gap: 4rem; align-items: center; }
+.chef-name { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.25rem; color: var(--text); }
+.chef-title { font-size: 0.78rem; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem; }
+.chef-bio p { font-size: 0.9rem; color: var(--muted); line-height: 1.9; margin-bottom: 1rem; }
+.chef-bio p:last-child { margin-bottom: 0; }
+
+@media (max-width: 768px) {
+  .about-hero { grid-template-columns: 1fr; }
+  .about-hero-text { padding: 3rem 1.5rem; }
+  .about-story { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.5rem; }
+  .about-story-sticky { position: static; }
+  .values-grid { grid-template-columns: 1fr; }
+  .chef-inner { grid-template-columns: 1fr; gap: 2rem; }
+}

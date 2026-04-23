@@ -1,0 +1,64 @@
+.gallery-grid {
+  max-width: 1200px; margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+}
+.gallery-item {
+  cursor: pointer; overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s;
+  position: relative;
+}
+.gallery-item:hover { border-color: var(--accent); }
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-item.tall { grid-row: span 2; }
+.gallery-item.wide { grid-column: span 2; }
+.gallery-overlay {
+  position: absolute; inset: 0;
+  background: rgba(232,87,26,0.15);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.25s;
+}
+.gallery-icon {
+  width: 44px; height: 44px;
+  border: 2px solid rgba(255,255,255,0.7);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 24px; font-weight: 300;
+}
+.lightbox-backdrop {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(0,0,0,0.92);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; padding: 2rem;
+}
+.lb-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  background: rgba(255,255,255,0.1); border: none; color: #fff;
+  width: 40px; height: 40px; border-radius: 50%;
+  font-size: 1.1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s; z-index: 1;
+}
+.lb-close:hover { background: var(--accent); }
+.lb-content { max-width: 80vw; width: 100%; border-radius: var(--radius); overflow: hidden; }
+.lb-img { height: 60vh; width: 100%; border-radius: var(--radius); }
+.lb-nav { display: flex; align-items: center; gap: 1.5rem; margin-top: 1.5rem; }
+.lb-btn {
+  background: rgba(255,255,255,0.1); border: none; color: #fff;
+  padding: 0.5rem 1.5rem; border-radius: 2px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.78rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  cursor: pointer; transition: background 0.2s;
+}
+.lb-btn:hover { background: var(--accent); }
+.lb-counter { font-size: 0.82rem; color: var(--muted); min-width: 60px; text-align: center; }
+@media (max-width: 768px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .gallery-item.tall { grid-row: span 1; }
+  .gallery-item.wide { grid-column: span 1; }
+  .lb-img { height: 45vh; }
+  .lb-content { max-width: 95vw; }
+}
+@media (max-width: 480px) { .gallery-grid { grid-template-columns: 1fr; } }

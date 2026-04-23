@@ -1,0 +1,44 @@
+.dish-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.dish-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+.dish-info { padding: 1rem; }
+.dish-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  color: var(--text);
+}
+.dish-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+.dish-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dish-price {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent2);
+}
+.veg-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.veg-dot.veg     { background: #22c55e; }
+.veg-dot.non-veg { background: var(--accent); }
